@@ -1,0 +1,23 @@
+{
+  "name": "world_flag_quiz",
+  "version": "1.0.0",
+  "description": "It is a Flag Quiz Game in which you have given a flag of a country, you have to tell which country it is. Technology used: Backend- NodeJs, Express | Database: PostgreSQL | Frontend: HTML, CSS, Javascript, EJS->(templating language).",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "world_flag_quiz"
+  },
+  "author": "Yogesh Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3"
+  }
+}

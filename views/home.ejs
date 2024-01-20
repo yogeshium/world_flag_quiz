@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+        .card {
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Guess The Flag</title>
+</head>
+<body>
+    <%if(locals.countryFlag){%>
+        <form method="POST" action="/check">
+            <div class="card">
+                <p class="score">Total Score: <%=score%></p>
+                <h1><%=countryFlag%></h1>
+                <input type="text" class="input-text" name="countryName" placeholder="Enter the country name">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+    <%}else if(locals.score){%>
+        <!-- <script>
+            const wasCorrect = "<%#locals.wasCorrect%>";
+            if(wasCorrect === "false")
+            {
+                const gameOver = "<div class='game-over-container'><h1>Game Over</h1><p>Your Final Score: <%=score%></p><button><a href='/'>Restart Game</a></button> </div>";
+                document.querySelector("body").innerHTML=gameOver;
+            }
+        </script> -->
+        <div class='game-over-container'>
+            <h1>Game Over</h1>
+            <p>Your Final Score: <%=score%></p>
+            <button><a href='/'>Restart Game</a></button> 
+        </div>
+    <%}else{%>
+        <div class='game-over-container'>
+            <h1>You Are The Champion</h1>
+            <button><a href='/'>Restart Game</a></button> 
+        </div>
+    <%}%>
+</body>
+</html>
